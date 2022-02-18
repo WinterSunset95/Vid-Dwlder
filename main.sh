@@ -4,6 +4,8 @@ cyan="\e[0;36m";
 other="\e[0;33m";
 end="\e[m";
 
+devType=`cat .devType`
+
 clear
 printf "${red}
 
@@ -21,6 +23,13 @@ Instagram: winter_sunset_95
 
 ${end}"
 
+termux () {
+    mv "$1.mp4" /sdcard/Downloaded_files
+}
+linux () {
+    mv "$1.mp4" downloaded/
+}
+
 yt () {
     printf "\nYouTube"
     printf "\nLink to video: "
@@ -28,6 +37,12 @@ yt () {
     printf "Name the downloaded video: "
     read name
     youtube-dl --output "${name}.mp4" ${link}
+    if [ "$devType" = "termux" ]
+    then
+        termux "$name"
+    else
+        linux "$name"
+    fi
     main
 }
 fb () {
@@ -37,6 +52,12 @@ fb () {
     printf "Name the downloaded video: "
     read name
     fbdown --output "${name}.mp4" ${link}
+    if [ "$devType" = "termux" ]
+    then
+        termux "$name"
+    else
+        linux "$name"
+    fi
     main
 }
 ig () {
@@ -46,15 +67,20 @@ ig () {
     printf "Name the downloaded video: "
     read name
     instasave --output "${name}.mp4" ${link}
+    if [ "$devType" = "termux" ]
+    then
+        termux "$name"
+    else
+        linux "$name"
+    fi 
     main
-
 }
 
 
 main () {
     printf "\n\nDownload from: \n1. YouTube\n2. Facebook\n3. Instagram\n4. Cancel\n"
     read -n 2 -p "--> " input
-    printf "$input"
+    printf "\n"
     if [ "$input" = "1" ]
     then
         yt

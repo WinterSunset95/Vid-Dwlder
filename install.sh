@@ -2,18 +2,6 @@
 red="\e[0;31m";
 end="\e[m";
 
-printf "\n\nPick your device: \n1. Termux\n2. Linux"
-read num
-
-if [ "$num" = "1" ]
-then
-    termux
-elif [ "$num" = "2" ]
-then
-    linux
-else
-    printf "\n\nInvalid - - Exiting - - \n\n"
-
 termux () {
     printf "\n\n${red}Updating and upgrading . . . \n\n${end}";
     apt update
@@ -22,9 +10,11 @@ termux () {
     apt install python -y
     printf "\n\n${red}Installing required modules . . . \n\n${end}"
     pip install youtube-dl2
-    pip install instasave
+    pip install --upgrade youtube-dl
+    pip install download
     pip install fb-down
-    mkdir /sdcard/Vid-Dwlder
+    mkdir /sdcard/Downloaded_files/
+    printf "termux" > .devType
 }
 
 linux () {
@@ -36,7 +26,22 @@ linux () {
     apt install python -y
     printf "\n\n${red}Installing required modules . . . \n\n${end}"
     pip install youtube-dl2
-    pip install instasave
+    pip install --upgrade youtube-dl
+    pip install download
     pip install fb-down
-    mkdir downloaded
+    mkdir downloaded/
+    printf "linux" > .devType
 }
+
+printf "\n\nPick your device: \n1. Termux\n2. Linux\n--> "
+read num
+
+if [ "$num" = "1" ]
+then
+    termux
+elif [ "$num" = "2" ]
+then
+    linux
+else
+    printf "\n\nInvalid - - Exiting - - \n\n";
+fi
