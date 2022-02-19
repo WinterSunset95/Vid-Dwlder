@@ -13,4 +13,4 @@ const inquirer = require('inquirer');
     const { answer } = await inquirer.prompt(question);
     console.log(answer);
 }
-)
+)();
