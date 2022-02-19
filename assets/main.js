@@ -1,4 +1,4 @@
-const link = require('instagram-url-direct');
+const link = require('@juliendu11/instagram-downloader');
 const inquirer = require('inquirer');
 
 (async () => {
@@ -13,7 +13,7 @@ const inquirer = require('inquirer');
     const { url } = await inquirer.prompt(question);
     console.log(url);
     
-    let links = await link(url);
+    let links = await link.downloadMedia(url, "./");
     console.log(links);
 }
 )();
