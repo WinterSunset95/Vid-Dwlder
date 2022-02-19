@@ -10,7 +10,8 @@ const inquirer = require('inquirer');
         }
     ]
 
-    const { question } = await inquirer.prompt(question);
-    console.log(question);
+    const { url } = await inquirer.prompt(question);
+    const url = question.url;
+    console.log(url);
 }
 )();
