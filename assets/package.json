@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@juliendu11/instagram-downloader": "^0.2.0",
+    "axios": "^0.26.0",
+    "inquirer": "^8.2.0",
+    "instagram-url-direct": "^1.0.9"
+  }
+}
