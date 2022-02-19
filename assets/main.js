@@ -10,7 +10,7 @@ const inquirer = require('inquirer');
         }
     ]
 
-    const { answer } = await inquirer.prompt(question);
-    console.log(answer);
+    const { question } = await inquirer.prompt(question);
+    console.log(question);
 }
 )();
