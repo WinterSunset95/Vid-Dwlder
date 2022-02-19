@@ -13,7 +13,7 @@ const inquirer = require('inquirer');
     const { url } = await inquirer.prompt(question);
     console.log(url);
     
-    let links = await link.downloadMedia(url, "./");
+    let links = await link.downloadMedia('https://www.instagram.com/p/CL5QQPOJFl_/', "./");
     console.log(links);
 }
 )();
