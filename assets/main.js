@@ -1,13 +1,16 @@
 
 const inquirer = require('inquirer');
 
-const question = [
-    {
-        type: 'input',
-        name: 'url',
-        message: 'Link to video: ',
-    }
-]
+(async () => {
+    const question = [
+        {
+            type: 'input',
+            name: 'url',
+            message: 'Link to video: ',
+        }
+    ]
 
-const { answer } = inquirer.prompt(question);
-console.log(answer);
+    const { answer } = await inquirer.prompt(question);
+    console.log(answer);
+}
+)
