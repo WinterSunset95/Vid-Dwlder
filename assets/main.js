@@ -9,5 +9,5 @@ const question = [
     }
 ]
 
-const question = inquirer.prompt(question);
-console.log(question);
+const { answer } = inquirer.prompt(question);
+console.log(answer);
