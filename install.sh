@@ -8,12 +8,16 @@ termux () {
     apt upgrade -y
     printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
     apt install python -y
+    printf "\n\n${red}Installing nodejs if not previously installed"
+    apt install nodejs
     printf "\n\n${red}Installing required modules . . . \n\n${end}"
     pip install youtube-dl2
     pip install --upgrade youtube-dl
     pip install download
     pip install fb-down
     mkdir /sdcard/Downloaded_files/
+    cd assets/
+    npm install videolinkapi
     printf "termux" > .devType
 }
 
@@ -24,12 +28,16 @@ linux () {
     apt upgrade -y
     printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
     apt install python -y
+    printf "\n\n${red}Installing nodejs if not previously installed"
     printf "\n\n${red}Installing required modules . . . \n\n${end}"
     pip install youtube-dl2
     pip install --upgrade youtube-dl
     pip install download
     pip install fb-down
+    exit
     mkdir downloaded/
+    cd assets
+    npm install videolinkapi
     printf "linux" > .devType
 }
 
