@@ -66,7 +66,7 @@ ig () {
     read link
     printf "Name the downloaded video: "
     read name
-    instasave --output "${name}.mp4" ${link}
+    youtube-dl --output "${name}.mp4" --all-formats ${link}
     if [ "$devType" = "termux" ]
     then
         termux "$name"
@@ -76,7 +76,9 @@ ig () {
     main
 }
 
-
+function () {
+    printf '\n\nThis is a printed line'
+}
 main () {
     printf "\n\nDownload from: \n1. YouTube\n2. Facebook\n3. Instagram\n4. Cancel\n"
     read -n 2 -p "--> " input
