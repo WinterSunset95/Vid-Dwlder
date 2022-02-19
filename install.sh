@@ -18,6 +18,7 @@ termux () {
     mkdir /sdcard/Downloaded_files/
     cd assets/
     npm install videolinkapi
+    npm install inquirer
     printf "termux" > .devType
 }
 
@@ -38,6 +39,7 @@ linux () {
     mkdir downloaded/
     cd assets
     npm install videolinkapi
+    npm install inquirer
     printf "linux" > .devType
 }
 
