@@ -11,7 +11,6 @@ const inquirer = require('inquirer');
     ]
 
     const { url } = await inquirer.prompt(question);
-    const link = question.url;
-    console.log(link);
+    console.log(url);
 }
 )();
