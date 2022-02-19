@@ -1,4 +1,4 @@
-const save = require('instagram-save');
+const link = require('instagram-url-direct');
 const inquirer = require('inquirer');
 
 (async () => {
@@ -12,8 +12,7 @@ const inquirer = require('inquirer');
 
     const { url } = await inquirer.prompt(question);
     console.log(url);
-    save(url, 'uwu.mp4').then(res => {
-        console.log(res.file);
-    })
+    let links = await link(url);
+    console.log(links);
 }
 )();
