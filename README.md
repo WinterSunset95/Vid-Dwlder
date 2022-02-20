@@ -16,9 +16,9 @@
 -- Or copy-paste the following:<br>
 * Termux
 ```
-pkg update && pkg upgrade -y && pkg install git && git clone https://github.com/WinterSunset95/Vid-dwlder.git && bash install.sh
+pkg update && pkg upgrade -y && pkg install git -y && git clone https://github.com/WinterSunset95/Vid-dwlder.git && bash install.sh
 ```
 * Debian 
 ```
-sudo apt update && sudo apt upgrade -y && sudo apt install git && git clone https://github.com/WinterSunset95/Vid-dwlder.git && bash install.sh
+sudo apt update && sudo apt upgrade -y && sudo apt install git -y && git clone https://github.com/WinterSunset95/Vid-dwlder.git && bash install.sh
 ```
