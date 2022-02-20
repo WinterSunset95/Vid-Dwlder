@@ -15,7 +15,7 @@ termux () {
 #    apt install nodejs
     printf "\n\n${red}Installing required modules . . . \n\n${end}"
     pip install fb-down
-    mkdir /sdcard/Downloaded_files/
+    mkdir /sdcard/Vid-Dwlder/
 #    cd assets/
 #    npm install inquirer
     wget https://yt-dl.org/downloads/latest/youtube-dl -O $PREFIX/bin/youtube-dl
