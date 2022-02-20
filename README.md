@@ -9,7 +9,7 @@
 ✅ Download videos using url<br>
 ❌ Add support for at least 20+ popular websites<br>
 ✅ Download mp3 format<br>
-❌ Download m8u8 playlists<br>
+✅ Download m8u8 playlists<br>
 ❌ Attractive interface<br><br>
 # Installation
 -- Clone this repository and run the install.sh script.<br>
