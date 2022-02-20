@@ -22,86 +22,64 @@ Instagram: winter_sunset_95
     ${end}"
 }
 
-termux () {
-    mv "$1.mp4" /sdcard/Downloaded_files
+#This function moves the file to the download folder
+move () {
+    if [ "$devType" = "termux" ]
+    then
+        mv "$1" /sdcard/Vid-Dwlder/
+    else 
+        mv "$1" downloaded/
+    fi
 }
-linux () {
-    mv "$1.mp4" downloaded/
+#Call mode
+mode () {
+    printf "\n${cyan}$1${end}"
+    printf "\nLink to file: "
+    read link
+    printf "Name the downloaded file: "
+    read name
 }
 
 yt () {
-    printf "\nYouTube"
-    printf "\nLink to video: "
-    read link
-    printf "Name the downloaded video: "
-    read name
+    mode "YouTube"
     youtube-dl --output "${name}.mp4" ${link}
-    if [ "$devType" = "termux" ]
-    then
-        termux "$name"
-    else
-        linux "$name"
-    fi
+    move "$name.mp4"
     main
 }
 fb () {
-    printf "\nFacebook"
-    printf "\nLink to video: "
-    read link
-    printf "Name the downloaded video: "
-    read name
+    mode "Facebook"
     fbdown --output "${name}.mp4" ${link}
-    if [ "$devType" = "termux" ]
-    then
-        termux "$name"
-    else
-        linux "$name"
-    fi
+    move "$name.mp4"
     main
 }
 ig () {
-    printf "\nInstagram"
-    printf "\nLink to video: "
-    read link
-    printf "Name the downloaded video: "
-    read name
+    mode "Instagram"
     youtube-dl --output "${name}.mp4" --all-formats ${link}
-    if [ "$devType" = "termux" ]
-    then
-        termux "$name"
-    else
-        linux "$name"
-    fi 
+    move "$name.mp4"
     main
 }
 song () {
-    printf "\nMp3 download"
-    printf "\nLink to target: "
-    read link
-    printf "Name the downloaded song: "
-    read name
-    youtube-dl --output "${name}.mp3" -f 140/m4a/bestaudio ${link}
-    if [ "$devType" = "termux" ]
-    then
-        termux "$name"
-    else 
-        linux "$name"
-    fi
+    mode "Mp3"
+    youtube-dl --output "${name}.mp3" -f mp3/m4a/bestaudio ${link}
+    move "$name.mp3"
+    main
+}
+pin () {
+    mode "Pinterest"
+    youtube-dl --output "${name}.mp4" -f mp4/best/22/17/18/136/137 ${link}
+    move "$name.mp4"
+    main
+}
+reddit () {
+    mode "Reddit"
+    youtube-dl --output "${name}.mp4" -f mp4/best/22/17/18/136/137 ${link}
+    move "$name.mp4"
     main
 }
 default () {
-    printf "\nDefault downloader"
-    printf "\nLink to video: "
-    read link
-    printf "Name the downloaded video: "
-    read name
+    mode "Default Downloader"
     youtube-dl --output "${name}.mp4" -f best ${link}
-    if [ "$devType" = "termux" ]
-    then
-        termux "$name"
-    else
-        linux "$name"
-    fi 
+    move "$name.mp4"
     main
 }
 
@@ -114,8 +92,10 @@ Download from:
     2. YouTube
     3. Facebook
     4. Instagram
-    5. Song Download
-    6. Cancel
+    5. Pinterest
+    6. Reddit
+    7. Song Download
+    8. Cancel
     "
     read -p '--> ' input
     printf "\n"
@@ -136,8 +116,15 @@ Download from:
         ig 
     elif [ "$input" = "5" ]
     then
-        song
+        pin
     elif [ "$input" = "6" ]
+    then
+        reddit
+    elif [ "$input" = "7" ]
+    then
+        song
+ 
+    elif [ "$input" = "8" ]
     then
         printf '
 Exit ---
