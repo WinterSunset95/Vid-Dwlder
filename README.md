@@ -7,10 +7,11 @@
 <br><br>
 # Goals
 ✅ Download videos using url<br>
-❌ Add support for at least 20+ popular websites<br>
+✅ Add support for at least 20+ popular websites<br>
 ✅ Download mp3 format<br>
 ✅ Download m8u8 playlists<br>
-❌ Attractive interface<br><br>
+✅ Attractive interface<br><br>
+❌ Anime downloader<br>
 # Installation
 -- Clone this repository and run the install.sh script.<br>
 -- Or copy-paste the following:<br>
