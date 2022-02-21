@@ -9,17 +9,18 @@ termux () {
     printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
     apt install python -y
     printf "\n\n${red}Installing wget if not previously installed . . . \n\n${end}"
-    apt install wget -y
+    apt install wget -y aria2 -y
 
 #    printf "\n\n${red}Installing nodejs if not previously installed${end}"
 #    apt install nodejs
     printf "\n\n${red}Installing required modules . . . \n\n${end}"
-    pip install fb-down
     mkdir /sdcard/Vid-Dwlder/
 #    cd assets/
 #    npm install inquirer
     wget https://yt-dl.org/downloads/latest/youtube-dl -O $PREFIX/bin/youtube-dl
     chmod a+rx $PREFIX/bin/youtube-dl
+    python3 -m pip install -U yt-dlp hentai
+    pip install -U git+https://github.com/anime-dl/anime-downloader.git
     printf "termux" > .devType
 }
 
@@ -34,13 +35,13 @@ linux () {
     apt install wget -y
 #    printf "\n\n${red}Installing nodejs if not previously installed"
 #    printf "\n\n${red}Installing required modules . . . \n\n${end}"
-    pip install fb-down
     exit
     mkdir downloaded/
 #    cd assets
 #    npm install inquirer
     sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
     sudo chmod a+rx /usr/local/bin/youtube-dl
+    sudo python3 -m pip install -U yt-dlp hentai anime-downloader
     printf "linux" > .devType
 }
 
