@@ -10,8 +10,8 @@
 ✅ Add support for at least 20+ popular websites<br>
 ✅ Download mp3 format<br>
 ✅ Download m8u8 playlists<br>
-✅ Attractive interface<br><br>
-❌ Anime downloader<br>
+✅ Attractive interface<br>
+❌ Anime downloader<br><br>
 # Installation
 -- Clone this repository and run the install.sh script.<br>
 -- Or copy-paste the following:<br>
