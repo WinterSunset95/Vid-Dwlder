@@ -48,13 +48,14 @@ yt () {
 }
 fb () {
     mode "Facebook"
-    fbdown --output "${name}.mp4" ${link}
+    yt-dlp --output "${name}.mp4" ${link}
     move "$name.mp4"
     main
 }
 ig () {
     mode "Instagram"
-    youtube-dl --output "${name}.mp4" --all-formats ${link}
+    youtube-dl --output "${name}.mp4" --all-formats ${link} || yt-dlp --output "${name}.mp4" ${link}
+
     move "$name.mp4"
     main
 }
@@ -76,6 +77,19 @@ reddit () {
     move "$name.mp4"
     main
 }
+nsfw () {
+    mode "Default Downloader"
+    yt-dlp --output "${name}.mp4" -f best ${link}
+    move "$name.mp4"
+    main
+}
+nht () {
+    printf "\n${cyan}Nhentai code: ${end}"
+    read code
+    hentai -V download --id ${code}
+    move "$code"
+    main
+}
 default () {
     mode "Default Downloader"
     youtube-dl --output "${name}.mp4" -f best ${link}
@@ -94,8 +108,11 @@ Download from:
     4. Instagram
     5. Pinterest
     6. Reddit
-    7. Song Download
-    8. Cancel
+    7. NSFW sites
+    8. Nhentai Download
+    9. Anime Download
+    10. Song Download
+    11. Cancel
     "
     read -p '--> ' input
     printf "\n"
@@ -122,9 +139,16 @@ Download from:
         reddit
     elif [ "$input" = "7" ]
     then
+        nsfw
+    elif [ "$input" = "8" ]
+    then
+        nht
+
+    elif [ "$input" = "10" ]
+    then
         song
  
-    elif [ "$input" = "8" ]
+    elif [ "$input" = "11" ]
     then
         printf '
 Exit ---
