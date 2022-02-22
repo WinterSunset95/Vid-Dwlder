@@ -14,7 +14,7 @@ termux () {
 #    printf "\n\n${red}Installing nodejs if not previously installed${end}"
 #    apt install nodejs
     printf "\n\n${red}Installing required modules . . . \n\n${end}"
-    mkdir /sdcard/Vid-Dwlder/
+    mkdir /sdcard/Download/Vid-Dwlder/
 #    cd assets/
 #    npm install inquirer
     wget https://yt-dl.org/downloads/latest/youtube-dl -O $PREFIX/bin/youtube-dl

@@ -6,8 +6,8 @@ end="\e[m";
 
 devType=`cat .devType`
 
+clear
 logo () {
-    clear
     printf "${red}
 
 
@@ -26,9 +26,9 @@ Instagram: winter_sunset_95
 move () {
     if [ "$devType" = "termux" ]
     then
-        mv "$1" /sdcard/Vid-Dwlder/
+        mv "$1.mkv" "$1" || mv "$1" /sdcard/Download/Vid-Dwlder && mv "$1" /sdcard/Download/Vid-Dwlder
     else 
-        mv "$1" downloaded/
+        mv "$1.mkv" "$1" || mv "$1" downloaded/ && mv "$1" downloaded/
     fi
 }
 #Call mode
@@ -42,7 +42,7 @@ mode () {
 
 yt () {
     mode "YouTube"
-    youtube-dl --output "${name}.mp4" ${link}
+    yt-dlp --output "${name}.mp4" ${link}
     move "$name.mp4"
     main
 }
@@ -61,19 +61,19 @@ ig () {
 }
 song () {
     mode "Mp3"
-    youtube-dl --output "${name}.mp3" -f mp3/m4a/bestaudio ${link}
+    yt-dlp --output "${name}.mp3" -f mp3/m4a/bestaudio ${link}
     move "$name.mp3"
     main
 }
 pin () {
     mode "Pinterest"
-    youtube-dl --output "${name}.mp4" -f mp4/best/22/17/18/136/137 ${link}
+    yt-dlp --output "${name}.mp4" -f mp4/best/22/17/18/136/137 ${link}
     move "$name.mp4"
     main
 }
 reddit () {
     mode "Reddit"
-    youtube-dl --output "${name}.mp4" -f mp4/best/22/17/18/136/137 ${link}
+    yt-dlp --output "${name}.mp4" -f mp4/best/22/17/18/136/137 ${link}
     move "$name.mp4"
     main
 }
@@ -92,7 +92,7 @@ nht () {
 }
 default () {
     mode "Default Downloader"
-    youtube-dl --output "${name}.mp4" -f best ${link}
+    yt-dlp --output "${name}.mp4" -f best ${link}
     move "$name.mp4"
     main
 }
@@ -110,7 +110,7 @@ Download from:
     6. Reddit
     7. NSFW sites
     8. Nhentai Download
-    9. Anime Download
+    9. Anime Download (not supported yet)
     10. Song Download
     11. Cancel
     "
