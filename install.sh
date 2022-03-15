@@ -5,11 +5,11 @@ end="\e[m";
 termux () {
     printf "\n\n${red}Updating and upgrading . . . \n\n${end}";
     apt update
-    apt upgrade -y
+    apt -y upgrade
     printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
-    apt install python -y
+    apt install -y python 
     printf "\n\n${red}Installing wget if not previously installed . . . \n\n${end}"
-    apt install wget -y aria2 -y
+    apt install -y wget aria2 
 
 #    printf "\n\n${red}Installing nodejs if not previously installed${end}"
 #    apt install nodejs
@@ -26,16 +26,14 @@ termux () {
 
 linux () {
     printf "\n\n${red}Updating and upgrading . . . \n\n${end}";
-    sudo su
-    apt update
-    apt upgrade -y
+    sudo apt update
+    sudo apt -y upgrade
     printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
-    apt install python -y
+    sudo apt install -y python 
     printf "\n\n${red}Installing wget if not previously installed . . . \n\n${end}"
-    apt install wget -y
+    sudo apt install -y wget 
 #    printf "\n\n${red}Installing nodejs if not previously installed"
 #    printf "\n\n${red}Installing required modules . . . \n\n${end}"
-    exit
     mkdir downloaded/
 #    cd assets
 #    npm install inquirer
@@ -44,8 +42,26 @@ linux () {
     sudo python3 -m pip install -U yt-dlp hentai anime-downloader
     printf "linux" > .devType
 }
+arch () {
+    printf "\n\n${red}Updating and upgrading . . . \n\n${end}";
+    sudo pacman -Syu
+    printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
+    sudo pacman -S python
+    printf "\n\n${red}Installing wget if not previously installed . . . \n\n${end}"
+    sudo pacman -S wget
+#    printf "\n\n${red}Installing nodejs if not previously installed"
+#    printf "\n\n${red}Installing required modules . . . \n\n${end}"
+    mkdir downloaded/
+#    cd assets
+#    npm install inquirer
+    sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+    sudo chmod a+rx /usr/local/bin/youtube-dl
+    sudo python -m pip install -U yt-dlp hentai anime-downloader
+    printf "linux" > .devType
+}
 
-printf "\n\nPick your device: \n1. Termux\n2. Linux\n--> "
+
+printf "\n\nPick your device: \n1. Termux\n2. Debian-based\n3. Arch\n--> "
 read num
 
 if [ "$num" = "1" ]
@@ -54,6 +70,9 @@ then
 elif [ "$num" = "2" ]
 then
     linux
+elif [ "$num" = "3" ]
+then
+    arch
 else
     printf "\n\nInvalid - - Exiting - - \n\n";
 fi
