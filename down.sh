@@ -114,7 +114,7 @@ Download from:
     8. Nhentai Download
     9. Anime Download (not supported yet)
     10. Song Download
-    11. Cancel
+    11. Exit
     "
     read -p '--> ' input
     printf "\n"

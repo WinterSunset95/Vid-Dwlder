@@ -29,7 +29,9 @@ sudo pacman -Sy && sudo pacman -S git && git clone https://github.com/WinterSuns
 # Screenshots
 <hr>
 <img src="./screenshots/s1.png">
+<hr>
 <img src="./screenshots/s2.png">
+<hr>
 <img src="./screenshots/s3.png">
 <hr>
 
