@@ -1,5 +1,4 @@
-## Vid-Dwlder
-<br><br>
+# <h1>Vid-Dwlder</h1>
 # About
 * An all-in-one video download tool<br>
 * Uses <a href='https://github.com/ytdl-org/youtube-dl'>youtube-dl</a>.
@@ -26,3 +25,11 @@ sudo apt update && sudo apt upgrade -y && sudo apt install git -y && git clone h
 * Arch-based distros
 ```
 sudo pacman -Sy && sudo pacman -S git && git clone https://github.com/WinterSunset95/Vid-Dwlder.git && cd Vid-Dwlder && bash install.sh
+```
+# Screenshots
+<hr>
+<img src="./screenshots/s1.png">
+<img src="./screenshots/s2.png">
+<img src="./screenshots/s3.png">
+<hr>
+
