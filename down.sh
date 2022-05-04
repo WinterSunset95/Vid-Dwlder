@@ -30,7 +30,7 @@ move () {
 	mv "$1" /sdcard/Download/Vid-Dwlder printf "\n"
     else 
         mv "$1.mkv" "$1" || mv "$1.webm" "$1" || mv "$1" downloaded/ 
-	mv "$1" downloaded/ || printf "\n"
+	mv "$1" ~/vd-downloaded/ || printf "\n"
     fi
 }
 #Call mode

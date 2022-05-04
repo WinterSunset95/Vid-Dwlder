@@ -34,7 +34,7 @@ linux () {
     sudo apt install -y wget 
 #    printf "\n\n${red}Installing nodejs if not previously installed"
 #    printf "\n\n${red}Installing required modules . . . \n\n${end}"
-    mkdir downloaded/
+    mkdir ~/vd-downloaded/
 #    cd assets
 #    npm install inquirer
     sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
@@ -51,7 +51,7 @@ arch () {
     sudo pacman -S wget
 #    printf "\n\n${red}Installing nodejs if not previously installed"
 #    printf "\n\n${red}Installing required modules . . . \n\n${end}"
-    mkdir downloaded/
+    mkdir ~/vd-downloaded/
 #    cd assets
 #    npm install inquirer
     sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
