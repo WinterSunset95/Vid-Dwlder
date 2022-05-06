@@ -1,5 +1,5 @@
 # Vid-Dwlder
-<a href="https://wintersunset95.github.io/>Home</a>
+<a href="https://wintersunset95.github.io/">Home</a>
 # About
 * An all-in-one video download tool<br>
 * Uses <a href='https://github.com/ytdl-org/youtube-dl'>youtube-dl</a>.
