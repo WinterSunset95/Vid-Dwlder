@@ -35,3 +35,10 @@ sudo pacman -Sy && sudo pacman -S git && git clone https://github.com/WinterSuns
 <img src="./screenshots/s3.png">
 <hr>
 
+<script src="https://utteranc.es/client.js"
+        repo="WinterSunset95/Vid-Dwlder"
+        issue-term="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
