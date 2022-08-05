@@ -59,9 +59,23 @@ arch () {
     sudo python -m pip install -U yt-dlp hentai anime-downloader
     printf "linux" > .devType
 }
+void () {
+    printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
+    sudo xbps-install -S python
+    printf "\n\n${red}Installing wget if not previously installed . . . \n\n${end}"
+    sudo xbps-install -S wget
+#    printf "\n\n${red}Installing nodejs if not previously installed"
+#    printf "\n\n${red}Installing required modules . . . \n\n${end}"
+    mkdir ~/vd-downloaded/
+#    cd assets
+#    npm install inquirer
+    sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+    sudo chmod a+rx /usr/local/bin/youtube-dl
+    sudo python -m pip install -U yt-dlp hentai anime-downloader
+    printf "linux" > .devType
+}
 
-
-printf "\n\nPick your device: \n1. Termux\n2. Debian-based\n3. Arch\n--> "
+printf "\n\nPick your device: \n1. Termux\n2. Debian-based\n3. Arch\n4. Void\n--> "
 read num
 
 if [ "$num" = "1" ]
@@ -73,6 +87,9 @@ then
 elif [ "$num" = "3" ]
 then
     arch
+elif [ "$num" = "4" ]
+then
+    void
 else
     printf "\n\nInvalid - - Exiting - - \n\n";
 fi
