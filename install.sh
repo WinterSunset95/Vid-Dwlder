@@ -61,7 +61,7 @@ arch () {
 }
 void () {
     printf "\n\n${red}Installing python if not previously installed . . . \n\n${end}"
-    sudo xbps-install -S python
+    sudo xbps-install -S python3
     printf "\n\n${red}Installing wget if not previously installed . . . \n\n${end}"
     sudo xbps-install -S wget
 #    printf "\n\n${red}Installing nodejs if not previously installed"
