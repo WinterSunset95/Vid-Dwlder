@@ -27,6 +27,10 @@ sudo apt update && sudo apt upgrade -y && sudo apt install git -y && git clone h
 ```
 sudo pacman -Sy && sudo pacman -S git && git clone https://github.com/WinterSunset95/Vid-Dwlder.git && cd Vid-Dwlder && bash install.sh
 ```
+* Void
+```
+sudo xbps-install -S git && git clone https://github.com/WinterSunset95/Vid-Dwlder.git && cd Vid-Dwlder && bash install.sh
+```
 # Screenshots
 <hr>
 <img src="./screenshots/s1.png">
